@@ -53,6 +53,45 @@ def arc2(t,r,angle):
 def cicle2(t,r):
     arc2(t,r,360)
 
+def petala(bob, length,n, r):
+    pass
+
+def flower2(bob, length, n, r):
+    circumference = 2*math.pi *r
+    angle = 360/n 
+    rot = angle/4
+    length = circumference/n
+    while True:
+        for i in range(n):
+            bob.fd(length)
+            bob.lt(angle/5)
+
+        for i in range(n):
+            bob.lt(rot)
+            #bob.fd(angle/5)
+        
+        for i in range(n):
+            bob.fd(length)
+            bob.lt(angle/5)
+
+def flower(bob, length, n, r):
+    circumference = 2*math.pi *r
+    angle = 360/n 
+    rot = angle/4
+    length = circumference/n
+    while True:
+        for i in range(n):
+            bob.fd(length)
+            bob.lt(angle/5)
+
+        for i in range(n):
+            bob.lt(rot)
+            #bob.fd(angle/5)
+        
+        for i in range(n):
+            bob.fd(length)
+            bob.lt(angle/5)
+
 """ 
 bob.fd(100)
 bob.lt(90)
@@ -65,9 +104,11 @@ bob.fd(100) """
 
 #square(bob, 199)
 #poligon(bob, 100, 6)
-circle(bob, 100, 80, 30)
+#circle(bob, 100, 80, 30)
 #arc(bob, 100, 120)
 #cicle2(bob, 30)
+
+flower2(bob, 50, 80, 25)
 
 
 
