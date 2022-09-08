@@ -55,24 +55,27 @@ def cicle2(t,r):
 
 def petala(bob, length,n, r):
     pass
-
+# fizemos a primeira petala
+# Agora só fazermos um repet para cada petola que queremos 
 def flower2(bob, length, n, r):
     circumference = 2*math.pi *r
     angle = 360/n 
-    rot = angle/4
+    rot = angle/3
     length = circumference/n
-    while True:
-        for i in range(n):
-            bob.fd(length)
-            bob.lt(angle/5)
+    larg = angle/6
+    
+    bob.lt(angle/2)
+    for i in range(n):
+        bob.fd(length)
+        bob.lt(larg)
 
-        for i in range(n):
-            bob.lt(rot)
+    for i in range(n):
+        bob.lt(rot)
             #bob.fd(angle/5)
         
-        for i in range(n):
-            bob.fd(length)
-            bob.lt(angle/5)
+    for i in range(n):
+        bob.fd(length)
+        bob.lt(larg)
 
 def flower(bob, length, n, r):
     circumference = 2*math.pi *r
