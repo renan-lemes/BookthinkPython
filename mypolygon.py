@@ -57,6 +57,7 @@ def petala(bob, length,n, r):
     pass
 # fizemos a primeira petala
 # Agora só fazermos um repet para cada petola que queremos 
+
 def flower2(bob, length, n, r):
     circumference = 2*math.pi *r
     angle = 360/n 
