@@ -1,4 +1,5 @@
 
+from msvcrt import kbhit
 import turtle
 import math
 
@@ -53,10 +54,34 @@ def arc2(t,r,angle):
 def cicle2(t,r):
     arc2(t,r,360)
 
-def petala(bob, length,n, r):
-    pass
+def Rotation(bob, n, rot, k):
+    if k == 0:
+        for i in range(n):
+            bob.lt(rot)
+    if k == 1:
+        for i in range(n):
+            bob.lt(rot/2)
+    if k == 2:
+        for i in range(n):
+            bob.lt(rot/2)
+
+def petalas3(bob, length, n, angle, larg, rot, k):
+    for j in range(3):
+        bob.lt(angle/2)
+        for i in range(n):
+            bob.fd(length)
+            bob.lt(larg)
+
+        Rotation(bob, n, rot, k)
+            
+        for i in range(n):
+            bob.fd(length)
+            bob.lt(larg)
+
+
 # fizemos a primeira petala
 # Agora só fazermos um repet para cada petola que queremos 
+
 
 def flower2(bob, length, n, r):
     circumference = 2*math.pi *r
@@ -64,19 +89,12 @@ def flower2(bob, length, n, r):
     rot = angle/3
     length = circumference/n
     larg = angle/6
-    
-    bob.lt(angle/2)
-    for i in range(n):
-        bob.fd(length)
-        bob.lt(larg)
+    k=0
+    while k < 3:
+        petalas3(bob, length, n, angle=angle, larg=larg, rot=rot, k=k)    
+        Rotation(bob, n, rot=rot, k=k)
+        k+=1
 
-    for i in range(n):
-        bob.lt(rot)
-            #bob.fd(angle/5)
-        
-    for i in range(n):
-        bob.fd(length)
-        bob.lt(larg)
 
 def flower(bob, length, n, r):
     circumference = 2*math.pi *r
