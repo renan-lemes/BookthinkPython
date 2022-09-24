@@ -28,7 +28,7 @@ def circle(bob, length, n, r):
         bob.lt(angle)
 
 # solução do livro 
-def arc(t,r,angle):
+def arc(t,angle):
     arc_lenght = 2*math.pi*angle/360
     n = int(arc_lenght/3)+1
     step_length = arc_lenght/n
@@ -114,6 +114,17 @@ def flower(bob, length, n, r):
             bob.fd(length)
             bob.lt(angle/5)
 
+def triangle(bob, length, n):
+    angle = 45
+    bob.lt(angle)
+    bob.fd(length)
+    bob.lt(2*angle)
+    bob.fd(length)
+    bob.lt(3*angle)
+    bob.fd(length)
+
+
+
 """ 
 bob.fd(100)
 bob.lt(90)
@@ -130,8 +141,8 @@ bob.fd(100) """
 #arc(bob, 100, 120)
 #cicle2(bob, 30)
 
-flower2(bob, 50, 80, 25)
+#flower2(bob, 50, 80, 25)
 
-
+triangle(bob, 50, 15)
 
 turtle.mainloop()

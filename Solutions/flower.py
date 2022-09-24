@@ -1,7 +1,4 @@
-''' 
-    Autor: Renan Lemes Leepklan
-    
-'''
+
 
 import math 
 import turtle
