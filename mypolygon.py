@@ -1,5 +1,5 @@
 
-from msvcrt import kbhit
+
 import turtle
 import math
 
