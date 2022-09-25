@@ -1,5 +1,7 @@
 
 
+from cmath import cos
+from itertools import tee
 import turtle
 import math
 
@@ -115,14 +117,48 @@ def flower(bob, length, n, r):
             bob.lt(angle/5)
 
 def triangle(bob, length, n):
-    angle = 45
-    bob.lt(angle)
+    
+    theta = 360/n
+   # for i in range(n):
     bob.fd(length)
-    bob.lt(2*angle)
+    bob.lt(180)
     bob.fd(length)
-    bob.lt(3*angle)
+    for i in range(n-1):
+        bob.lt(180+theta)
+        bob.fd(length)
+        bob.lt(180)
+        bob.fd(length)
+    bob.lt(180)
     bob.fd(length)
+    if n == 8 : 
+        bob.lt(theta + 65)
+        for i in range(n):
+            bob.fd(length * math.sin(theta * math.pi / 180))
+            bob.lt(theta)
+            
+        #bob.fd(length - 10)
+        #bob.lt(theta + 5)
+        #bob.fd(length - 10)
 
+    if n == 6:
+        for i in range(n):
+            bob.lt(180-theta)
+            bob.fd(length + math.cos(theta))
+        #for i in range(n):
+        #    bob.lt(theta)
+        #    bob.fd(length - math.cos(theta))
+    #bob.lt(theta)
+    #bob.fd(length)
+
+        #bob.fd(2*length)
+        #bob.lt(theta)
+        #bob.fd(length)
+        
+
+
+
+    
+    
 
 
 """ 
@@ -143,6 +179,9 @@ bob.fd(100) """
 
 #flower2(bob, 50, 80, 25)
 
-triangle(bob, 50, 15)
+triangle(bob, 50, 8)
+
+#polyline(bob, 12, 100, 45)
+
 
 turtle.mainloop()
