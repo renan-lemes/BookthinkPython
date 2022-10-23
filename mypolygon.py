@@ -1,9 +1,12 @@
 
 
 from cmath import cos
+from concurrent.futures import thread
 from itertools import tee
 import turtle
 import math
+
+
 
 
 
@@ -116,9 +119,13 @@ def flower(bob, length, n, r):
             bob.fd(length)
             bob.lt(angle/5)
 
+
+
+
 def triangle(bob, length, n):
     
     theta = 360/n
+    
    # for i in range(n):
     bob.fd(length)
     bob.lt(180)
@@ -131,28 +138,13 @@ def triangle(bob, length, n):
     bob.lt(180)
     bob.fd(length)
     if n == 8 : 
-        bob.lt(theta + 65)
-        for i in range(n):
-            bob.fd(length * math.sin(theta * math.pi / 180))
-            bob.lt(theta)
-            
-        #bob.fd(length - 10)
-        #bob.lt(theta + 5)
-        #bob.fd(length - 10)
+        return 0
 
     if n == 6:
         for i in range(n):
             bob.lt(180-theta)
             bob.fd(length + math.cos(theta))
-        #for i in range(n):
-        #    bob.lt(theta)
-        #    bob.fd(length - math.cos(theta))
-    #bob.lt(theta)
-    #bob.fd(length)
-
-        #bob.fd(2*length)
-        #bob.lt(theta)
-        #bob.fd(length)
+       
         
 
 
