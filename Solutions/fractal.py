@@ -27,6 +27,6 @@ def draw(t, length, n):
 
 bob = turtle.Turtle()
 draw(bob, 5, 10)
-
+#draw(bob, 0.9, 0.5)
 turtle.mainloop()
 
