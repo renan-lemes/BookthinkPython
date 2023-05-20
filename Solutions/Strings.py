@@ -18,28 +18,34 @@ def read20carct(fin):
 # Exercicio 9.2
 
 def has_no_e(word):
+    print(word)
     if word.find('e') == False:
         return True
     else:
         return False
     
 
-
 def test (fin):
-    tam = len(fin.readlines())
-    print(tam)
+    
     value_e = 0
+    value_n_e = 0
+    tam = 0
     for line in fin:
-        if has_no_e(line.strip()) == True :
+        tam += 1
+        # print(line)
+        print()
+        if (line[line.strip().find('e')]) == 'e' :
             word = line.strip()
-            print(word)
+            #print(word)
             value_e += 1
+        else :
+            value_n_e += 1
 
     porct_e = value_e/tam *100
-    porct_n_e = (tam - value_e)/tam *100
+    porct_n_e = (value_n_e)/tam *100
     print('porcentagem com E')
-    print(porct_e)
+    print(round(porct_e, 2))
     print('porcentagem sem o E')
-    print(porct_n_e)    
+    print(round(porct_n_e, 2))    
     
 test(fin)
