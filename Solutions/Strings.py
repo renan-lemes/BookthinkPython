@@ -50,7 +50,7 @@ def Procent_e (fin):
     
 #Procent_e(fin)
 
-# Exercicio 9.3
+# Exercicio 9.3 9.4 e 9.5
 
 palavras_ = []
 palavras_not = []
@@ -76,6 +76,35 @@ def Exerc_9_3 (fin):
         word = line.strip()
         asvoid(word, arrayletras)
 
-Exerc_9_3 (fin)
-print('palavras com as letras', len(palavras_))
-print('palavras sem as letras', len(palavras_not))
+#Exerc_9_3 (fin)
+#print('palavras com as letras', len(palavras_))
+#print('palavras sem as letras', len(palavras_not))
+
+# Exercicio 9.6
+'''
+    Pegar e retornar se a palavra está em ordem alfabetica ou não 
+    
+'''
+
+array_txt_n_abc = []
+
+
+def Exerc_9_6 (palavra):
+    alfabeto = 'abcdefghijklmnopqrstuvxwyz'
+    arr_most = []
+    for l in palavra:
+        arr_most.append(alfabeto.find(l))
+        
+    if all(arr_most[i] <= arr_most[i+1] for i in range(len(arr_most) -1 )) == True:
+        print('Esta em ordem alfabetica')
+    else:
+        print('Não esta em ordem alfabetica')
+
+
+
+# palavras exemplos em ordem alfabetica:
+# amor, ceu, flor
+
+palavra = input('Digite uma palavra: ')
+
+Exerc_9_6(palavra)
