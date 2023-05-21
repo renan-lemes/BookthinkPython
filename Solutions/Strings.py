@@ -6,7 +6,7 @@ fin = open('C:\\Users\\RenanLemes\\Desktop\\Projeto_\\BookThinkPython\\Solutions
 # line = fin.readline()
 # print(line.strip())
 
-def read20carct(fin):
+def read20carct (fin):
     for line in fin :
         if len(line.strip()) > 20 :
             word = line.strip()
@@ -17,7 +17,7 @@ def read20carct(fin):
 
 # Exercicio 9.2
 
-def has_no_e(word):
+def has_no_e (word):
     print(word)
     if word.find('e') == False:
         return True
@@ -25,7 +25,7 @@ def has_no_e(word):
         return False
     
 
-def test (fin):
+def Procent_e (fin):
     
     value_e = 0
     value_n_e = 0
@@ -48,4 +48,34 @@ def test (fin):
     print('porcentagem sem o E')
     print(round(porct_n_e, 2))    
     
-test(fin)
+#Procent_e(fin)
+
+# Exercicio 9.3
+
+palavras_ = []
+palavras_not = []
+def asvoid (word, letras):
+    ''' 
+        word : palavra
+        letras: serie de letras input
+    '''
+
+    for i in letras:
+        if word[word.find(i)] == i :
+            palavras_.append(word)
+        else :
+            palavras_not.append(word)
+
+
+def Exerc_9_3 (fin):
+    letras = input("Digite as letras que deseja tirar da lista de palavras: ")
+    arrayletras = []
+    [arrayletras.append(i) for i in letras] 
+
+    for line in fin : 
+        word = line.strip()
+        asvoid(word, arrayletras)
+
+Exerc_9_3 (fin)
+print('palavras com as letras', len(palavras_))
+print('palavras sem as letras', len(palavras_not))
