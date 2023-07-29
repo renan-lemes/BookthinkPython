@@ -84,4 +84,21 @@ arr2 = [1,2,4,3,4]
 # print(has_duplicate(arr1))
 # print(has_duplicate(arr2))
 
-## Exercicio 10.8 paradoxo do aniversario
+## Exercicio 10.8 paradoxo do aniversario ✅
+
+from random import randint as rand_int
+def Paradox_birth(num_pes:int,simulation:int) -> float:
+    count_birth = 0 # crio um contador 
+    
+    for i in range(simulation):
+        birth = [rand_int(1,365) for _ in range(num_pes)]  # uma lista com os dias de 23 pessoas com a o dia do aniversario
+        # print(birth) # exibo na tela
+        if (len(birth) != len(set(birth))): # verifico se existe uma pessoa com o mesmo aniversario usando set
+            count_birth += 1 ## contador recebendo +1
+
+    proba = count_birth / simulation
+    return proba    
+    
+
+
+print(Paradox_birth(23, 10))
