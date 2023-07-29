@@ -49,7 +49,7 @@ def inverse_dict(d:dict)-> dict:
  
 a = True
 
-print('valor de a antes',a)
+# print('valor de a antes',a)
 
 def test_global():
     global a 
@@ -64,12 +64,63 @@ test_global()
 ## Exercicios
 # 
 
+## Exercicio 11.4 ✅ 
 
+lst_rep = [
+    {
+        "nome": "João",
+        "idade": 30,
+        "cidade": "São Paulo"
+    },
+    {
+        "nome": "Maria",
+        "idade": 25,
+        "cidade": "Rio de Janeiro"
+    },
+    {
+        "nome": "Pedro",
+        "idade": 28,
+        "cidade": "Belo Horizonte"
+    },
+    {
+        "nome": "João",
+        "idade": 30,
+        "cidade": "São Paulo"
+    }
+]
+lst_not_rep = [
+    {
+        "nome": "Maria",
+        "idade": 25,
+        "cidade": "Rio de Janeiro"
+    },
+    {
+        "nome": "Pedro",
+        "idade": 28,
+        "cidade": "Belo Horizonte"
+    },
+    {
+        "nome": "João",
+        "idade": 30,
+        "cidade": "São Paulo"
+    }
+]
 
+def has_duplicate_dict(lst:list)->bool:
+    ''' 
+        Entendi para adicionar no set precisamos transformar os valores em tuplas assim 
+        
+    '''
 
+    conj = set()
+    for i in lst:
+        print(i)
+        if (tuple(i) in conj):
+            return True
+        conj.add(tuple(i.items()))
+    return False
 
-
-
-
+# print(has_duplicate_dict(lst_not_rep))
+# print(has_duplicate_dict(lst_rep))
 
 
