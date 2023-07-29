@@ -101,4 +101,7 @@ def Paradox_birth(num_pes:int,simulation:int) -> float:
     
 
 
-print(Paradox_birth(23, 10))
+# print(Paradox_birth(23, 10))
+# Método in pega e pesquisa os elementos em ordem 
+
+
