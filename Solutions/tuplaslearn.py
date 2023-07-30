@@ -78,7 +78,7 @@ words = read_file('Solutions\\words.txt')
 # print(most_freq(words))
 
 ## Exericio 13.5 ✅  
-
+    
 def prob_hist(s:dict)->dict:
     total = 0
     prob_d = {}
