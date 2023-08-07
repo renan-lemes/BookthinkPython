@@ -21,7 +21,7 @@ def preocess_file (filename:str) -> dict:
 
     return hist
 
-print(preocess_file('Solutions\\words.txt'))
+# print(preocess_file('Solutions\\words.txt'))
 
 def most_common(hist):
     t = []
