@@ -73,4 +73,36 @@ def rect_in_circle (cir, rec):
             return False
 
 
-print(rect_in_circle(circle, ret))
+# print(rect_in_circle(circle, ret))
+
+## outro exercicio sugerido 
+
+class Time:
+    """
+        Classe para representar o tempo
+    """
+    def print_time(self):
+        return print(f"{self.hour:2d}:{self.min:2d}:{self.sec:2d}")
+
+
+time1 = Time()
+
+time1.hour = 12
+time1.min = 12
+time1.sec = 12
+
+# print(time1.print_time())
+
+
+time2 = Time()
+time2.hour = 15
+time2.min = 12
+time2.sec = 0
+
+def is_after(t1, t2)->bool :
+    
+    dif = (t1.hour-t2.hour)*3600 + (t1.min - t2.min)*60 + (t1.sec - t2.sec)  
+
+    return dif>0
+
+print(is_after(time1, time2))
