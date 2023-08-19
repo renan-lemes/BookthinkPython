@@ -27,7 +27,7 @@ circle.x = 150
 circle.y = 100
 circle.radius = 75
 
-print(circle)
+# print(circle)
 
 def point_in_cirlce(cir, p):
 
@@ -105,4 +105,49 @@ def is_after(t1, t2)->bool :
 
     return dif>0
 
-print(is_after(time1, time2))
+# print(is_after(time1, time2))
+
+
+time3 = Time()
+
+time3.hour = 10
+time3.min = 60
+time3.sec = 55
+
+## Iria fazer recursivo porem python me limitou.
+
+def increment(time, seconds):
+    time.sec += seconds
+
+    if time.sec >= 60 :
+        time.sec -= 60
+        time.min += 1
+
+    if time.min >= 60:
+        time.min -= 60
+        time.hour += 1
+    
+    if time.hour >= 24:
+        time.hour -=24
+    
+    while time.sec >= 60:
+        time.min += 1
+        time.sec -=60
+
+    while time.min >= 60:
+        time.hour += 1
+        time.min -=60
+    
+    while time.hour >= 24:
+        time.hour =-24
+
+    return time
+
+
+    
+
+    
+
+t = increment(time3, 120)
+
+print(f"{t.hour:02d}:{t.min:02d}:{t.sec:02d}")
