@@ -192,4 +192,31 @@ def mul_time (time, num):
 
 time_t = mul_time(time_t, num)
 
-print(time_t.hour, time_t.min, time_t.sec)
+# print(time_t.hour, time_t.min, time_t.sec)
+
+## Exercicio 16.2
+
+from datetime import datetime
+from datetime import timedelta
+
+def DataAtual():
+    date = datetime.now()
+    date = str(date).split(" ")[0]
+
+    return date
+
+# print(DataAtual())
+
+def Years(happy):
+    ano = happy.split("-")[0]
+    mes = happy.split("-")[1]
+    dia = happy.split("-")[2]
+    happy = datetime(int(ano), int(mes), int(dia))
+    date =  datetime.now() - happy
+    
+    # periodo = timedelta(days=date.days, hours=date.hours, minutes=date.minutes, seconds=date.seconds, microseconds=date.microseconds)
+    anos = date.days / 365.25
+    
+    return int(anos)
+
+print(Years("1996-11-19"))
