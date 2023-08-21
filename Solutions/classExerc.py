@@ -114,7 +114,7 @@ time3.hour = 10
 time3.min = 60
 time3.sec = 55
 
-## Iria fazer recursivo porem python me limitou.
+## Iria fazer recursivo porem python me limitou 
 
 def increment(time, seconds):
     time.sec += seconds
@@ -144,10 +144,19 @@ def increment(time, seconds):
     return time
 
 
-    
+# t = increment(time3, 120)
 
-    
+# print(f"{t.hour:02d}:{t.min:02d}:{t.sec:02d}")
 
-t = increment(time3, 120)
+def time_to_int(time):
+    minutes = time.hour *60 + time.min
+    seconds = minutes * 60 + time.sec
+    return seconds
 
-print(f"{t.hour:02d}:{t.min:02d}:{t.sec:02d}")
+def int_to_time(seconds):
+    time = Time()
+    minutes, time.sec = divmod(seconds, 60)
+    time.hour, time.min = divmod(minutes, 60)
+    return time
+
+ 
