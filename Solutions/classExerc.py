@@ -137,9 +137,10 @@ def increment(time, seconds):
     while time.min >= 60:
         time.hour += 1
         time.min -=60
-    
-    while time.hour >= 24:
-        time.hour =-24
+
+    # houras depende por que horas vai até n     
+    # while time.hour >= 24:
+    #     time.hour =-24
 
     return time
 
@@ -159,4 +160,36 @@ def int_to_time(seconds):
     time.hour, time.min = divmod(minutes, 60)
     return time
 
- 
+def add_time(t1, t2):
+    seconds = time_to_int(t1) + time_to_int(t2)
+    return int_to_time(seconds)
+
+
+## Exercicio 16.1
+
+time_t = Time()
+time_t.hour = 2
+time_t.min = 54
+time_t.sec = 46
+
+num = 4
+
+def mul_time (time, num):
+    time2 = Time()
+
+    time2.hour = time.hour * num 
+    time2.min = time.min * num
+    time2.sec = time.sec * num
+
+    div, time2.sec = divmod(time2.sec, 60)
+    min_sum = (div * 60)
+    time2.min = time2.min + min_sum
+    div, time2.min = divmod(time2.min, 60)
+    hour_sum = (div * 60)
+    time2.hour = time2.hour + hour_sum
+
+    return time2
+
+time_t = mul_time(time_t, num)
+
+print(time_t.hour, time_t.min, time_t.sec)
