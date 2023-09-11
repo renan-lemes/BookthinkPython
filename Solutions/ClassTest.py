@@ -1,10 +1,14 @@
-
 def int_to_time(seconds):
-    time = Time()
-    minutes, time.seconds = time.seconds = divmod(seconds, 60)
-    time.hours, time.minutes = divmod(minutes, 60)
-    time.day, time.hours = divmod(time.hours, 24)
-    return time
+    
+    # print(seconds)
+
+    minutes, seconds = divmod(seconds, 60)
+    hours, minutes = divmod(minutes, 60)
+    days, hours = divmod(hours, 24)
+    
+    return Time(days, hours, minutes, seconds)
+
+
 
 class Time :
     ''' 
@@ -18,17 +22,25 @@ class Time :
         self.minutes = minutes
         self.seconds = seconds
 
-    def __str__(self) -> str:
-        return '%2d:%2d:%2d:%2d' % (self.day, self.hours, self.minutes, self.seconds)
+    def __str__(self):
+        return '%.2d:%.2d:%.2d:%.2d' % (self.day, self.hours, self.minutes, self.seconds)
+
     
-    def __add__(self, other):
-        seconds = self.time_to_int() + other.time_to_int()
-        return int_to_time(seconds)
+    def print_time(self):
+        print(str(self))
 
     def time_to_int(self):
-        minutes = self.hours * 60 + self.minutes + self.day * 24
-        print(minutes)
+        minutes = self.hours * 60 + self.minutes + self.day * 24 * 60
         seconds = minutes * 60 + self.seconds
+        return seconds
+
+    def __add__(self, other):
+        
+        return self.add_time(other) 
+    
+    def add_time(self, other):
+        seconds = self.time_to_int() + other.time_to_int()
+        print(seconds)            
         return int_to_time(seconds)
 
     def adjust_time (self):
@@ -42,8 +54,6 @@ class Time :
         div, self.hours = divmod(self.hours, 24)
         min_day = (div * 24)
         self.day = self.day + min_day
-
-        
 
     def valid_time (self):
         ''' 
@@ -93,8 +103,16 @@ class Time :
     
 
 
-t = Time(2, 12, 24, 13)
-t2 = Time(2, 12, 24, 13)
+t = Time(1, 1, 1, 1)
+t2 = Time(1, 1, 1, 1)
 
+
+t = t + t2
+
+# print(t.day)
+# print(t.hours)
+# print(t.minutes)
+# print(t.seconds)
 
 print(t + t2)
+# print(t)
