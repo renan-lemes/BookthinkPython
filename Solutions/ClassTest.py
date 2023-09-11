@@ -36,7 +36,13 @@ class Time :
 
     def __add__(self, other):
         
-        return self.add_time(other) 
+        if isinstance(other, Time):
+            return self.add_time(other)
+        else:
+            return self.increment2(other)
+
+    def __radd__(self, other):
+        return self.__add__(other)
     
     def add_time(self, other):
         seconds = self.time_to_int() + other.time_to_int()
@@ -65,6 +71,10 @@ class Time :
             return False
         return True
     
+    def increment2(self, seconds):
+        seconds += self.time_to_int()
+        return int_to_time(seconds)
+
     def increment(self, seconds):
         ''' 
             incrementar segundos na class 
@@ -106,8 +116,6 @@ class Time :
 t = Time(1, 1, 1, 1)
 t2 = Time(1, 1, 1, 1)
 
-
-t = t + t2
 
 # print(t.day)
 # print(t.hours)
