@@ -60,6 +60,7 @@ class Time:
         """Adds two Time objects or a Time object and a number."""
         return self.__add__(other)
 
+
     def add_time(self, other):
         """Adds two time objects."""
         assert self.is_valid() and other.is_valid()
