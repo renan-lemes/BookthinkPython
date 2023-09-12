@@ -10,7 +10,7 @@ class Card :
     """
     def __init__(self, suit = 0 , rank = 2 ): 
         self.suit = suit
-        self.rank = 2
+        self.rank = rank
     suit_names = ['Paus', 'Ouros', 'Copas', 'Espadas']
     rank_name = [None, 'As', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Valete', 'Dama', 'Rei']
     def __str__(self) -> str:
@@ -74,6 +74,8 @@ class Hand(Deck):
 
 hand = Hand('new hand')
 deck = Deck()
+
+print(deck)
 
 card = deck.pop_card()
 card2 = deck.pop_card()
