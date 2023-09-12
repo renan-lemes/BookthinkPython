@@ -2,6 +2,7 @@ import random
 ## Exercicios do cap 18
 ## Ec 18.1 ✅
 ## Ex 18.2
+
 class Card :
     """
     Representa as cartas
@@ -62,6 +63,9 @@ class Hand(Deck):
         self.cards = []
         self.label = label
 
+    def move_cards(self, hand, num):
+        for i in range(num):
+            hand.add_card(self.pop_card())
 
 
 
@@ -75,10 +79,8 @@ class Hand(Deck):
 hand = Hand('new hand')
 deck = Deck()
 
-print(deck)
+# print(deck)
 
 card = deck.pop_card()
-card2 = deck.pop_card()
 hand.add_card(card)
-hand.add_card(card2)
-print(hand)
+# print(hand)
